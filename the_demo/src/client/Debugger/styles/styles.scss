@@ -25,6 +25,12 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 }
 
+canvas {
+	max-width: 100%;
+	height: auto !important;
+	vertical-align: middle;
+}
+
 .wrapper {
 	display: flex;
 	font-size: 0;
@@ -52,8 +58,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #main-container {
-	float: left;
-	width: calc(100% - 600px) !important;
+	flex: auto;
+}
+
+#main-container > div {
+	height: 100%;
+}
+
+#main-container > div:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
 }
 
 .hierarchy {

@@ -63,34 +63,19 @@ class Game {
 		this._record = new Record();
 
 		this._mainContainer = document.getElementById('main-container') || document.createElement('div');
-		if (this._isRecordMode) {
-			this._mainContainer.style.position = "relative";
-			this._mainContainer.style.float = "left";
-			this._mainContainer.style.width = '70%';
-			this._mainContainer.style.height = '100%';
-			this._mainContainer.style.display = 'table';
-		} else if (this._isTestMode) {
-			this._mainContainer.style.position = "relative";
-			this._mainContainer.style.float = "left";
-			this._mainContainer.style.width = '70%';
-			this._mainContainer.style.height = '100%';
-		} else {
-			this._mainContainer.style.width = '100%';
-			this._mainContainer.style.height = '100%';
-			this._mainContainer.style.display = 'table';
-		}
-
-
+		this._mainContainer.style.height = '100%';
 		this._mainContainer.style.backgroundColor = '#000';
+		
 		this._canvasContainer = document.createElement('div');
-		this._canvasContainer.style.display = 'table-cell';
 		this._canvasContainer.style.textAlign = 'center';
 		this._canvasContainer.style.verticalAlign = 'middle';
+
 		this._canvas = document.createElement('canvas');
 		this._canvas.style.backgroundColor = '#fff';
 		this._canvas.setAttribute('id', '__game_canvas__');
 		this._canvas.width = Config.canvasWidth;
 		this._canvas.height = Config.canvasHeight;
+
 		this._canvasContainer.appendChild(this._canvas);
 		this._mainContainer.appendChild(this._canvasContainer);
 		this._context = this._canvas.getContext('2d');
