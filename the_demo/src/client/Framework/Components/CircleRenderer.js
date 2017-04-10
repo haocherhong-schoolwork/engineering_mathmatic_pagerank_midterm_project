@@ -136,6 +136,10 @@ class CircleRenderer extends Renderer {
 		this._mode = value;
 	}
 
+	get bounds() {
+		return new Rect(-this._radius, -this._radius, this._radius * 2, this._radius * 2);
+	}
+
 	render(ctx) {
 		if (this._opacity == 0)
 			return;
