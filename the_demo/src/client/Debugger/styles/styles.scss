@@ -1,0 +1,158 @@
+@font-face {
+    font-family: 'Visitor';
+    src: url('/fonts/visitor1.ttf');
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'Visitor';
+	font-size: 16px;
+	user-select: none;
+	overflow: hidden;
+}
+
+ul {
+	margin-top: 0;
+	padding-left: 32px;
+	list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+.wrapper {
+	display: flex;
+	font-size: 0;
+	height: 100vh;
+}
+
+.side-panel {
+	background: #242424;
+	float: left;
+	width: 300px;
+	min-width: 200px;
+}
+
+.panel {
+	color: white;
+	font-size: 16px;
+	padding: 6px 0 0 12px;
+    overflow: scroll;
+    overflow-x: auto;
+    height: 100%;
+
+    &:not(:last-child) {
+    	border-bottom: 1px solid #515151;
+    }
+}
+
+#main-container {
+	float: left;
+	width: calc(100% - 600px) !important;
+}
+
+.hierarchy {
+
+	height: 60%;
+
+	span {
+		font-size: 16px;
+		cursor: pointer;
+	}
+
+	.selected {
+		background: gray;
+	}
+
+	.name:hover {
+		opacity: 0.8;
+	}
+
+	.name:active {
+		opacity: 0.5;
+	}
+
+	.disactive {
+		text-decoration: line-through;
+		opacity: 0.5;
+	}
+}
+
+.control-panel {
+	height: 40%;
+}
+
+.inspector {
+
+	header > * {
+		vertical-align: middle;
+	}
+
+	.component {
+		margin: 16px 0;
+	}
+
+	.component .name:active {
+		opacity: 0.5;
+	}
+}
+
+.layer {
+	padding-left: 16px;
+}
+
+.property {
+	margin: 4px 0;
+
+	> div {
+	    color: lightgreen;
+	}
+
+	> h4 {
+	    color: lightgray;
+	}
+
+	:hover {
+		opacity: 0.8;
+	}
+
+	:active {
+		opacity: 0.5;
+	}
+}
+
+.cursor {
+	cursor: pointer;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+	width: 7px;
+	height: 7px;
+}
+
+::-webkit-scrollbar-button {
+	width: 0px;
+	height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #515151;
+	border: 0px none #ffffff;
+	border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+	background: #333333;
+	border: 0px none #ffffff;
+	border-radius: 50px;
+}
+
+::-webkit-scrollbar-corner {
+	background: transparent;
+}
